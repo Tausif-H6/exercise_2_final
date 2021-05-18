@@ -35,8 +35,8 @@ class _TodoListTileState extends State<TodoListTile> {
       subtitle: Text(
           'This list has ${_completedTaskLength(widget.tasks[widget.index].tasks).toString()} task(s)'),
       trailing: CircleAvatar(
-          //child: Text(widget.tasks[widget.index].percent.round().toString()),
-          ),
+        child: Text(widget.tasks[widget.index].percent.round().toString()),
+      ),
       onTap: () => navigateToTaskList(),
     );
   }
