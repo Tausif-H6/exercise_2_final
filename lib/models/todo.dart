@@ -10,8 +10,7 @@ class Todo {
             title: from.title,
             tasks: [for (Task task in from.tasks) Task.copy(task)]);
 
-  // double get percent =>
-  //     (tasks.fold(0, (sum, next) => next.completed != false ? sum + 1 : sum) /
-  //         tasks.length) *
-  //     100;
+  int get percent =>
+      ((tasks.where((task) => task.completed).length / tasks.length) * 100)
+          .round();
 }
